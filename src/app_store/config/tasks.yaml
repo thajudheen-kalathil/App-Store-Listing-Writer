@@ -1,0 +1,87 @@
+value_proposition_extraction_task:
+  description: >
+    Analyze the app description below for {app_input} and extract the core value proposition.
+
+    Identify:
+    - Core benefit
+    - Target audience
+    - User pain points
+    - Key differentiators
+    - Emotional value
+    - Main features
+
+
+  expected_output: >
+    A detailed breakdown of: 
+    - Target users
+    - Pain points
+    - Features
+    - Benefits
+    - Unique value proposition
+  agent: value_proposition_extractor
+
+listing_copywriting_task:
+  description: >
+    Create a complete and App Store optimized listing for {app_input}
+    using the provided app details.
+
+    The response MUST strictly follow the format below.
+
+    Include:
+    - App Title
+    - Subtitle
+    - Short Description
+    - Long Description
+    - Keywords
+
+    IMPORTANT:
+    - You MUST use the Keyword Length Validator tool.
+    - NEVER manually calculate the character count.
+    - The validation section MUST come directly from the tool output.
+
+    Ensure the content is:
+    - Persuasive
+    - ASO optimized
+    - User focused
+    - Clear and concise
+
+    STRICT OUTPUT FORMAT:
+
+    App Title:
+    <title>
+
+    Subtitle:
+    <subtitle>
+
+    Short Description:
+    <short description>
+
+    Long Description:
+    <long description>
+
+    Keywords:
+    <comma separated keywords>
+
+    Keyword Validation:
+    Validation Result: <PASS/FAIL>
+    Character Count: <count>/100
+  expected_output: >
+    A fully structured App Store listing containing:
+    title, subtitle, short description, long description,
+    keywords, and keyword validation details in the exact format provided.
+  agent: listing_copywriter
+
+screenshot_caption_task:
+  description: >
+    Write 5 screenshot captions for the app {app_input} based on the app description.
+
+    Requirements:
+    - Short
+    - Benefit-focused
+    - Emotionally engaging
+    - Mobile-friendly
+
+
+  expected_output: >
+    5 numbered screenshot captions.
+  agent: screenshot_caption_writer
